@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_height="wrap_content"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/rv_item_lavoro_card"
+        android:layout_margin="10dp"
+        card_view:cardCornerRadius="6dp"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <TextView
+        android:layout_margin="5dp"
+        android:id="@+id/rv_item_lavoro_title_targa"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:text="@string/targa"
+        android:textColor="@color/textinAccent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/rv_item_lavoro_targa"
+            android:layout_margin="5dp"
+            android:textAlignment="center"
+            android:textColor="@color/textinAccent"
+            android:layout_toEndOf="@id/rv_item_lavoro_title_targa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_margin="5dp"
+        android:id="@+id/rv_item_lavoro_title_tipo_lavoro"
+        android:layout_below="@id/rv_item_lavoro_title_targa"
+        android:textStyle="bold"
+        android:text="@string/tipo_lavoro"
+        android:textColor="@color/textinAccent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/rv_item_lavoro_tipo_lavoro"
+            android:layout_margin="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rv_item_lavoro_title_targa"
+            android:layout_toEndOf="@id/rv_item_lavoro_title_tipo_lavoro"
+            android:textColor="@color/textinAccent"
+            android:textAlignment="center" />
+
+        <TextView
+        android:layout_margin="5dp"
+        android:id="@+id/rv_item_lavoro_title_descrizione_lavoro"
+        android:text="@string/desc_lavoro"
+            android:textColor="@color/textinAccent"
+        android:textStyle="bold"
+        android:layout_below="@id/rv_item_lavoro_title_tipo_lavoro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/rv_item_lavoro_descrizione_lavoro"
+            android:layout_margin="5dp"
+            android:textAlignment="center"
+            android:textColor="@color/textinAccent"
+            android:layout_below="@id/rv_item_lavoro_title_tipo_lavoro"
+            android:layout_toEndOf="@id/rv_item_lavoro_title_descrizione_lavoro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_margin="5dp"
+        android:id="@+id/rv_item_lavoro_title_data_scadenza"
+        android:text="@string/data_scadenza"
+        android:textStyle="bold"
+        android:textColor="@color/textinAccent"
+        android:layout_below="@id/rv_item_lavoro_title_descrizione_lavoro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/rv_item_lavoro_data_scadenza"
+            android:layout_margin="5dp"
+            android:textAlignment="center"
+            android:textColor="@color/textinAccent"
+            android:layout_below="@id/rv_item_lavoro_title_descrizione_lavoro"
+            android:layout_toEndOf="@id/rv_item_lavoro_title_data_scadenza"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    <!--<Button
+        android:id="@+id/rv_item_lavoro_effettuato"
+        android:layout_gravity="right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />-->
+
+    </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+
+</LinearLayout>

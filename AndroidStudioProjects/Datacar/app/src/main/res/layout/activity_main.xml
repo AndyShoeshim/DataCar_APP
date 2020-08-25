@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <Button
+        android:id="@+id/main_activity_area_clienti"
+        android:text="@string/area_clienti"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:onClick="goToAreaClienti"
+        />
+
+    <Button
+        android:id="@+id/main_activity_area_lavori"
+        android:text="@string/area_lavori"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/main_activity_area_clienti"
+        android:layout_margin="10dp"
+        android:onClick="goToAreaLavori"
+        />
+
+    <Button
+        android:id="@+id/main_activity_logout"
+        android:text="@string/logout"
+        android:onClick="logoutOfficina"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/main_activity_area_lavori"
+        android:layout_margin="10dp"
+        />
+
+    <TextView
+        android:id="@+id/main_activity_lista_lavori_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/lista_lavori"
+        android:textStyle="bold"
+        android:textColor="@color/design_default_color_on_secondary"
+        android:layout_below="@id/main_activity_area_clienti"
+        android:layout_centerInParent="true"
+        />
+
+    <LinearLayout
+        android:layout_below="@id/main_activity_lista_lavori_text"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/main_activity_recycle_view_lista_lavori"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            >
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+
+    </LinearLayout>
+
+</RelativeLayout>

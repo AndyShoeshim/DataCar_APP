@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <EditText
+        android:id="@+id/register_activity_rag_sociale"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/rag_sociale"
+        android:layout_centerHorizontal="true"
+        />
+
+    <EditText
+        android:id="@+id/register_activity__p_iva"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/p_iva"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/register_activity_rag_sociale"
+        />
+
+    <EditText
+        android:id="@+id/register_activity__email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/email_hint"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/register_activity__p_iva"
+        />
+
+    <EditText
+        android:id="@+id/register_activity__password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/password_hint"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/register_activity__email"
+        android:inputType="textPassword"
+        />
+
+    <EditText
+        android:id="@+id/register_activity__num_telefono"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/num_telefono"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/register_activity__password"
+        android:inputType="number"
+        />
+
+    <EditText
+        android:id="@+id/register_activity__indirizzo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/indirizzo"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/register_activity__num_telefono"
+        />
+
+       <Button
+        android:id="@+id/register_activity_register"
+        android:text="@string/register"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/register_activity__indirizzo"
+        android:onClick="registerOfficina"
+        />
+
+
+
+
+</RelativeLayout >
