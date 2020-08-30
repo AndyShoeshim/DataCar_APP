@@ -1,11 +1,18 @@
 package com.polimi.datacar.model;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.util.List;
 
 
 public class Auto {
 
     private int id;
+
+    private String targa;
+
+    @SerializedName("cod_fiscale")
+    private String cod_fiscale_proprietario;
 
     private String marca;
 
@@ -18,8 +25,6 @@ public class Auto {
     private String carburante;
 
     private String cavalli;
-
-    private List<AutoCliente> autoClienteEntities;
 
 
     public Auto() {
@@ -40,6 +45,22 @@ public class Auto {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public void setTarga(String targa) {
+        this.targa = targa;
+    }
+
+    public String getTarga() {
+        return targa;
+    }
+
+    public void setCod_fiscale(String cod_fiscale_proprietario) {
+        this.cod_fiscale_proprietario = cod_fiscale_proprietario;
+    }
+
+    public String getCod_fiscale() {
+        return cod_fiscale_proprietario;
     }
 
     public String getMarca() {
@@ -90,11 +111,4 @@ public class Auto {
         this.cavalli = cavalli;
     }
 
-    public void setAutoClienteEntities(List<AutoCliente> autoClienteEntities) {
-        this.autoClienteEntities = autoClienteEntities;
-    }
-
-    public List<AutoCliente> getAutoClienteEntities() {
-        return autoClienteEntities;
-    }
 }

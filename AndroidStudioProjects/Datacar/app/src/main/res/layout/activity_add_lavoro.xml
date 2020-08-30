@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/title_inserimento_lavoro"
+        android:textStyle="bold"
+        android:text="@string/form_inserimento_lavoro"
+        android:textAlignment="textStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:id="@+id/lavoro_targa"
+        android:textStyle="bold"
+        android:inputType="text"
+        android:hint="@string/inserimento_targa"
+        android:layout_margin="20dp"
+        android:layout_below="@+id/title_inserimento_lavoro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+    <EditText
+        android:id="@+id/lavoro_scadenza"
+        android:textStyle="bold"
+        android:hint="@string/inserimento_data_scadenza"
+        android:clickable="true"
+        android:cursorVisible="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:inputType="none"
+        android:layout_margin="20dp"
+        android:layout_below="@id/lavoro_targa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/lavoro_tipo"
+        android:text="@string/inserimento_tipo_lavoro"
+        android:textStyle="bold"
+        android:layout_margin="20dp"
+        android:layout_below="@id/lavoro_scadenza"
+        android:layout_alignStart="@id/spinner_tipo_lavoro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <Spinner
+        android:id="@+id/spinner_tipo_lavoro"
+        android:entries="@array/tipo_lavoro"
+        android:layout_marginHorizontal="10dp"
+        android:layout_below="@id/lavoro_tipo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/lavoro_descrizione"
+        android:text="@string/inserimento_desc_lavoro"
+        android:textStyle="bold"
+        android:layout_margin="20dp"
+        android:layout_alignStart="@id/spinner_lavoro_descrizione"
+        android:layout_toEndOf="@id/lavoro_tipo"
+        android:layout_below="@id/lavoro_scadenza"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <Spinner
+        android:id="@+id/spinner_lavoro_descrizione"
+        android:entries="@array/descrizione_lavoro"
+        android:layout_marginHorizontal="10dp"
+        android:layout_below="@id/lavoro_descrizione"
+        android:layout_toEndOf="@id/spinner_tipo_lavoro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/button_create_lavoro"
+        android:onClick="addLavoro"
+        android:background="@color/colorPrimaryDark"
+        android:textStyle="bold"
+        android:textColor="@color/textinAccent"
+        android:text="@string/salva_lavoro"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/spinner_tipo_lavoro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+
+</RelativeLayout>

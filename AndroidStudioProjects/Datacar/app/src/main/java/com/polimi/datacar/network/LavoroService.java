@@ -23,5 +23,5 @@ public interface LavoroService {
     @Headers({
             "Content-Type: application/json"
     })
-    Call<List<Void>> addLavoro(@Path("id_officina") int id_officina, @Body Lavoro lavoro);
+    Call<Void> addLavoro(@Path("id_officina") int id_officina, @Body Lavoro lavoro);
 }

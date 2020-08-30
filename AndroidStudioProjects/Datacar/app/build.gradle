@@ -31,6 +31,9 @@ android {
             buildConfigField 'String', 'BASE_URL', '"http://192.168.1.145:8080/DataCar/api/"'
         }
 
+        staging {
+            buildConfigField 'String', 'BASE_URL', '"http://192.168.137.1:8080/DataCar/api/"'
+        }
         prod {
             buildConfigField 'String', 'BASE_URL', '"http://prod.example.com"'
         }

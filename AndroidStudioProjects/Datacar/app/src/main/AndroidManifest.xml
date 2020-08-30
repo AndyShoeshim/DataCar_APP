@@ -25,6 +25,9 @@
         <activity android:name=".activities.AreaClientiActivity" />
         <activity android:name=".activities.AreaLavoriActivity" />
         <activity android:name=".activities.AddClienteActivity" />
+        <activity android:name=".activities.ModifyClienteActivity" />
+        <activity android:name=".activities.AddAutoClienteActivity" />
+        <activity android:name=".activities.AddLavoroActivity" />
 
 
     </application>

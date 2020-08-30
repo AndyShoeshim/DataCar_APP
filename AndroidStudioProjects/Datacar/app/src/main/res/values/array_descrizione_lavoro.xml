@@ -1,0 +1,23 @@
+<resources>
+    <string-array name="descrizione_lavoro">
+        <item>CAMBIO_OLIO</item>
+        <item>CAMBIO_FILTRI_OLIO</item>
+        <item>CAMBIO_FILTRO_ARIA</item>
+        <item>CAMBIO_FILTRO</item>
+        <item>SOSTITUZIONE_PASTIGLIE</item>
+        <item>SOSTITUZIONE_CINGHIA_DISTR</item>
+        <item>REGOLAGGIO_LIVELLI</item>
+        <item>BRACCETTO_SX</item>
+        <item>BRACCETTO_DX</item>
+        <item>PULLEGIE</item>
+        <item>TUBO_ASPIRAZIONE</item>
+        <item>INGETTORE_OTTURATO</item>
+        <item>TURBINA_AVARIATA</item>
+        <item>MALFUNZIONAMENTO_ALTERNATORE</item>
+        <item>MALFUNZIONAMENTO_MOTORINO_AVARIATO</item>
+        <item>AZZERAMENTO_KILOMETRI</item>
+        <item>MAPPATURA_CENTRALINA</item>
+        <item>CANCELLAZIONE_FAP</item>
+        <item>INDIVIDUAZIONE_ERRORI_CENTRALINA</item>
+    </string-array>
+</resources>

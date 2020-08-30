@@ -28,14 +28,14 @@ public interface ClientService {
     })
     Call<Void> addClient(@Path("id_officina") int id_officina, @Body Cliente cliente);
 
-    @PUT("cliente/{cod_fiscale}")
+    @PUT("cliente/{id_cliente}")
     @Headers({
             "Content-Type: application/json"
     })
-    Call<Cliente> updateClientInfo(@Path("cod_fiscale") String cod_fiscale, @Body Cliente Cliente);
+    Call<Cliente> updateClientInfo(@Path("id_cliente") int id_cliente, @Body Cliente Cliente);
 
-    @DELETE("cliente/{cod_fiscale}")
-    Call<Void> deleteClient(@Path("cod_fiscale") String cod_fiscale);
+    @DELETE("cliente/{id_officina}/{cod_fiscale}")
+    Call<Void> deleteClient(@Path("id_officina") int id_officina, @Path("cod_fiscale") String cod_fiscale);
 
 
 }

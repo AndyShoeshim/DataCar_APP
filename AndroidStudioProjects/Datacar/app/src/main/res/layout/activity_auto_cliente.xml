@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/title_inserimento_auto"
+        android:layout_margin="10dp"
+        android:text="@string/form_auto_cliente"
+        android:textColor="@color/design_default_color_on_secondary"
+        android:textStyle="bold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/targa_auto"
+        android:layout_margin="10dp"
+        android:hint="@string/inserimento_targa"
+        android:autofillHints="@string/inserimento_targa"
+        android:inputType="text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title_inserimento_auto"
+        />
+
+    <EditText
+        android:id="@+id/marca_auto"
+        android:layout_margin="10dp"
+        android:hint="@string/inserimento_marca"
+        android:autofillHints="@string/inserimento_targa"
+        android:inputType="text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title_inserimento_auto"
+        android:layout_toEndOf="@+id/targa_auto"
+        />
+
+    <EditText
+        android:id="@+id/modello_auto"
+        android:layout_margin="10dp"
+        android:hint="@string/inserimento_modello"
+        android:autofillHints="@string/inserimento_targa"
+        android:inputType="text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/targa_auto"
+        />
+
+    <EditText
+        android:id="@+id/motore_auto"
+        android:layout_margin="10dp"
+        android:hint="@string/inserimento_motore"
+        android:autofillHints="@string/inserimento_targa"
+        android:inputType="text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/modello_auto"
+        android:layout_below="@+id/marca_auto"
+        />
+
+    <EditText
+        android:id="@+id/cilindrata_auto"
+        android:layout_margin="10dp"
+        android:hint="@string/inserimento_cilindrata"
+        android:autofillHints="@string/inserimento_targa"
+        android:inputType="text|number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/modello_auto"
+        />
+
+    <EditText
+        android:id="@+id/carburante_auto"
+        android:layout_margin="10dp"
+        android:hint="@string/inserimento_carburante"
+        android:autofillHints="@string/inserimento_targa"
+        android:inputType="text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/modello_auto"
+        android:layout_below="@+id/motore_auto"
+        />
+
+
+    <EditText
+        android:id="@+id/cavalli_auto"
+        android:layout_margin="10dp"
+        android:hint="@string/inserimento_cavalli"
+        android:autofillHints="@string/inserimento_targa"
+        android:inputType="number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/carburante_auto"
+        />
+
+    <Button
+        android:id="@+id/button_auto_cliente"
+        android:onClick="registerAutoCliente"
+        android:layout_margin="10dp"
+        android:text="@string/registra_auto"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/cavalli_auto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+</RelativeLayout>

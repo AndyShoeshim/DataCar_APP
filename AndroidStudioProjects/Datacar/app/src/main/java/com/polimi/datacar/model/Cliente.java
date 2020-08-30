@@ -22,13 +22,11 @@ public class Cliente {
 
     private String cod_fiscale;
 
-    private int telefono;
+    private long telefono;
 
     private String email;
 
     private int targhe_associate;
-
-    private List<AutoCliente> autoClienteList;
 
     List<OfficinaCliente> officinaClienteList;
 
@@ -112,11 +110,11 @@ public class Cliente {
         this.cod_fiscale = cod_fiscale;
     }
 
-    public int getTelefono() {
+    public long getTelefono() {
         return telefono;
     }
 
-    public void setTelefono(int telefono) {
+    public void setTelefono(long telefono) {
         this.telefono = telefono;
     }
 
@@ -126,14 +124,6 @@ public class Cliente {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public List<AutoCliente> getAutoClienteList() {
-        return autoClienteList;
-    }
-
-    public void setAutoClienteList(List<AutoCliente> autoClienteList) {
-        this.autoClienteList = autoClienteList;
     }
 
     public List<OfficinaCliente> getOfficinaClienteList() {

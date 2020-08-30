@@ -1,8 +1,11 @@
 <resources>
     <string name="app_name">Datacar</string>
     <string name="waiting_dialog">In attesa della risposta…</string>
+    <string name="lista_lavoro_empty">Lista dei lavori ancora vuota!</string>
     <string name="email_hint">Inserisci email…</string>
     <string name="password_hint">Inserisci password…</string>
+    <string name="login_error">Credenziali non esistenti!</string>
+    <string name="server_error">Errore nella comunicazione con il server!</string>
     <string name="login">LOGIN</string>
     <string name="register">REGISTRA OFFICINA</string>
     <string name="logout">LOGOUT</string>
@@ -22,6 +25,7 @@
     <string name="search_cliente">Ricerca cliente…</string>
     <string name="search_cliente_hint">Ricerca cliente usando il suo codice fiscale…</string>
     <string name="register_cliente">Registra cliente</string>
+    <string name="modify_cliente">Aggiorna cliente</string>
     <string name="lista_clienti">Lista Clienti</string>
     <string name="name_cliente">NOME</string>
     <string name="cognome_cliente">COGNOME</string>
@@ -36,4 +40,26 @@
     <string name="inserisci_codice_fiscale">Inserisci codice fiscale…</string>
     <string name="inserisci_telefono">Inserisci numero di telefono…</string>
     <string name="inserisci_indirizzo">Inserisci indirizzo…</string>
+    <string name="form_inserimento_cliente">Compila le seguenti informazioni necessarie alla registrazione del cliente:</string>
+    <string name="form_modifica_cliente">Modifica le informazioni del cliente che vuoi aggiornare (ATTENZIONE: CODICE FISCALE NON MODIFICABILE)</string>
+    <string name="form_inserimento_lavoro">Compila le seguenti informazioni necessarie per inserire un nuovo lavoro!</string>
+    <string name="modifica_con_successo">Modifica del cliente effettuata con successo!</string>
+    <string name="form_auto_cliente">Inserisci le informazioni riguardanti l\'auto del cliente</string>
+    <string name="inserimento_targa">Inserisci targa dell\'auto</string>
+    <string name="inserimento_marca">Inserisci la marca</string>
+    <string name="inserimento_modello">Inserisci modello…</string>
+    <string name="inserimento_motore">Inserisci motore… </string>
+    <string name="inserimento_cilindrata">Inserisci cilindrata…</string>
+    <string name="inserimento_carburante">Inserisci carburante…</string>
+    <string name="inserimento_cavalli">Inserisci cavalli…</string>
+    <string name="registra_auto">REGISTRA AUTO DEL CLIENTE</string>
+    <string name="registra_auto_success">AUTO REGISTRATA CON SUCCESSO</string>
+    <string name="aggiungi_lavoro">AGGIUNGI NUOVO LAVORO</string>
+    <string name="inserimento_data_scadenza">Indica data di scadenza</string>
+    <string name="inserimento_tipo_lavoro">Scegli il tipo di lavoro</string>
+    <string name="inserimento_desc_lavoro">Scegli la descrizione</string>
+    <string name="salva_lavoro">SALVA LAVORO</string>
+    <string name="lavoro_success">Lavoro inserito con successo!</string>
+    <string name="lavoro_failure">Problemi nell\'inserimento del lavoro!</string>
+
 </resources>

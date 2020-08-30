@@ -51,7 +51,6 @@ public class MainActivity extends AppCompatActivity {
 
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(getBaseContext());;
         int token = sharedPref.getInt(getString(R.string.token), 0);
-        Log.d("lavoro", "" + token);
 
         LavoroController lavoroController = new LavoroController();
 
@@ -60,7 +59,6 @@ public class MainActivity extends AppCompatActivity {
         dialog.show();
         getDataFromServer(lavoroController,token);
         dialog.cancel();
-
 
 
     }
@@ -72,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
 
         final List<Lavoro> retriviedData = new ArrayList<>();
         lavoroController.getAllLavoro(token).enqueue(new Callback<List<Lavoro>>() {
+
             @Override
             public void onResponse(Call<List<Lavoro>> call, Response<List<Lavoro>> response) {
                 if(response.isSuccessful()) {
@@ -82,19 +81,15 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<List<Lavoro>> call, Throwable t) {
-                t.printStackTrace();
-                Log.e("token", t.getMessage());
+                errorWithServer();
             }
         });
-
-
     }
 
 
-
-
-
-
+    public void errorWithServer() {
+        UtilityUI.retrofitOnFailure(this);
+    }
 
     public void buildRecycleView(List<Lavoro> retriviedData) {
         if(!retriviedData.isEmpty()) {
@@ -103,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
             lavoroRecyleView.setAdapter(lavoroAdapter);
             lavoroRecyleView.setLayoutManager(new LinearLayoutManager(this));
         } else {
-            Toast.makeText(this,R.string.app_name,Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,R.string.lista_lavoro_empty,Toast.LENGTH_SHORT).show();
         }
     }
 

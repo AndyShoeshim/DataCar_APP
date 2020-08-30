@@ -15,6 +15,7 @@ public class ClientController implements ClientService {
     private Retrofit retrofit;
     private static final String BASE_URL = BuildConfig.BASE_URL;
 
+
     public ClientController() {
             retrofit = new Retrofit.Builder()
                     .baseUrl(BASE_URL).addConverterFactory(GsonConverterFactory.create())
@@ -38,12 +39,12 @@ public class ClientController implements ClientService {
     }
 
     @Override
-    public Call<Cliente> updateClientInfo(String cod_fiscale, Cliente obj) {
-        return retrofit.create(ClientService.class).updateClientInfo(cod_fiscale,obj);
+    public Call<Cliente> updateClientInfo(int id_cliente, Cliente obj) {
+        return retrofit.create(ClientService.class).updateClientInfo(id_cliente,obj);
     }
 
     @Override
-    public Call<Void> deleteClient(String cod_fiscale) {
-        return retrofit.create(ClientService.class).deleteClient(cod_fiscale);
+    public Call<Void> deleteClient(int id_officina, String cod_fiscale) {
+        return retrofit.create(ClientService.class).deleteClient(id_officina, cod_fiscale);
     }
 }

@@ -6,6 +6,8 @@ import java.sql.Date;
 
 public class Lavoro  {
 
+    private int id;
+
     private Officina id_officina;
 
     private String targa;
@@ -21,7 +23,8 @@ public class Lavoro  {
     public Lavoro() {
     }
 
-    public Lavoro(Officina id_officina, String targa, String tipoLavoro, String descLavoro, Date dataScandenza, boolean effettuato) {
+    public Lavoro(int id, Officina id_officina, String targa, String tipoLavoro, String descLavoro, Date dataScandenza, boolean effettuato) {
+        this.id = id;
         this.id_officina = id_officina;
         this.targa = targa;
         this.tipoLavoro = tipoLavoro;
@@ -30,6 +33,14 @@ public class Lavoro  {
         this.effettuato = effettuato;
     }
 
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public Officina getId_officina() {
         return id_officina;
@@ -65,6 +76,10 @@ public class Lavoro  {
 
     public Date getDataScandenza() {
         return dataScandenza;
+    }
+
+    public void setDataScandenza(Date dataScandenza) {
+        this.dataScandenza = dataScandenza;
     }
 
     public void setEffettuato(boolean effettuato) {

@@ -4,15 +4,11 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.text.Editable;
 import android.text.TextUtils;
-import android.text.TextWatcher;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -42,6 +38,7 @@ public class AddClienteActivity extends AppCompatActivity  {
         initializeViews();
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(getBaseContext());;
         token = sharedPref.getInt(getString(R.string.token), 0);
+        Intent goToAutoCliente = new Intent(getBaseContext(), AddAutoClienteActivity.class);
         clientController = new ClientController();
 
     }
@@ -59,10 +56,9 @@ public class AddClienteActivity extends AppCompatActivity  {
         telefono = findViewById(R.id.telefono_cliente);
         indirizzo = findViewById(R.id.indirizzo_cliente);
         addCliente = findViewById(R.id.add_cliente);
-
     }
 
-    //TODO add auto cliente activity
+
     public void addCliente(View view) {
         if(checkClienteCreation()){
             Cliente cliente = new Cliente();
@@ -72,14 +68,16 @@ public class AddClienteActivity extends AppCompatActivity  {
             cliente.setCap(cap.getText().toString());
             cliente.setCod_fiscale(cod_fiscale.getText().toString());
             cliente.setSesso(sesso.getSelectedItem().toString());
-            cliente.setTelefono(Integer.parseInt(telefono.getText().toString()));
+            cliente.setTelefono(Long.parseLong(telefono.getText().toString()));
             cliente.setIndirizzo(indirizzo.getText().toString());
 
             clientController.addClient(token,cliente).enqueue(new Callback<Void>() {
                 @Override
                 public void onResponse(Call<Void> call, Response<Void> response) {
-                    if(response.isSuccessful())
-                        startActivity(new Intent(getBaseContext(), AreaClientiActivity.class));
+                    if(response.isSuccessful()) {
+                        startActivity(new Intent(getBaseContext(), AddAutoClienteActivity.class)
+                                .putExtra("cod_fiscale_cliente", cod_fiscale.getText().toString()));
+                    }
                     else
                         Toast.makeText(getBaseContext(),R.string.error_generic,Toast.LENGTH_SHORT).show();
                 }

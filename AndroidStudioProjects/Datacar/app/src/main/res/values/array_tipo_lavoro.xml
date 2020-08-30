@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="tipo_lavoro">
+        <item>MANUTENZIONE</item>
+        <item>GUASTO</item>
+        <item>DIAGNOSI</item>
+    </string-array>
+</resources>

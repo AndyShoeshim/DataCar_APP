@@ -1,6 +1,5 @@
 package com.polimi.datacar.controller;
 
-import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.polimi.datacar.BuildConfig;
 import com.polimi.datacar.model.Lavoro;
@@ -35,7 +34,7 @@ public class LavoroController implements LavoroService {
     }
 
     @Override
-    public Call<List<Void>> addLavoro(int id_officina, Lavoro lavoro) {
+    public Call<Void> addLavoro(int id_officina, Lavoro lavoro) {
         return retrofit.create(LavoroService.class).addLavoro(id_officina,lavoro);
     }
 }

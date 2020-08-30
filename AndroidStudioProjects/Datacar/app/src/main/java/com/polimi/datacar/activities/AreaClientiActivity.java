@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.polimi.datacar.R;
+import com.polimi.datacar.activities.adapter.ClienteAdapter;
 import com.polimi.datacar.controller.ClientController;
 import com.polimi.datacar.model.Cliente;
 import com.polimi.datacar.utilities.UtilityUI;
@@ -28,7 +29,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 
-public class AreaClientiActivity extends AppCompatActivity {
+public class AreaClientiActivity extends AppCompatActivity  {
 
     RecyclerView clienteRv;
     EditText search_cliente_edit;
@@ -36,7 +37,8 @@ public class AreaClientiActivity extends AppCompatActivity {
     Button addButton;
     ClientController clientController;
     AlertDialog dialog;
-
+    ClienteAdapter clienteAdapter;
+    int token;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -44,7 +46,7 @@ public class AreaClientiActivity extends AppCompatActivity {
         setContentView(R.layout.activity_area_clienti);
 
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(getBaseContext());;
-        int token = sharedPref.getInt(getString(R.string.token), 0);
+        token = sharedPref.getInt(getString(R.string.token), 0);
 
         clientController = new ClientController();
 
@@ -56,7 +58,7 @@ public class AreaClientiActivity extends AppCompatActivity {
 
 
 
-    public void initializeViews() {
+    private void initializeViews() {
         dialog = UtilityUI.createWaitingAlertDialog(this,R.layout.layout_loading_items);
         clienteRv = findViewById(R.id.area_cliente_recycle_view_lista_cliente);
         search_cliente_edit = findViewById(R.id.area_cliente_search_text);
@@ -65,9 +67,10 @@ public class AreaClientiActivity extends AppCompatActivity {
     }
 
 
+
     public void buildRecycleView(List<Cliente> listOfCliente){
-        ClienteAdapter adpater = new ClienteAdapter(listOfCliente,this);
-        clienteRv.setAdapter(adpater);
+        clienteAdapter = new ClienteAdapter(listOfCliente,this,clientController,token);
+        clienteRv.setAdapter(clienteAdapter);
         clienteRv.setLayoutManager(new LinearLayoutManager(this));
         dialog.cancel();
     }
@@ -92,13 +95,19 @@ public class AreaClientiActivity extends AppCompatActivity {
     }
 
 
-    //TODO search and delete cliente
-
+    //TODO search
 
     public void registerCliente(View view) {
         startActivity(new Intent(this,AddClienteActivity.class));
     }
 
     public void searchCliente(View view) {
+    }
+
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        getDataFromServer(token);
     }
 }

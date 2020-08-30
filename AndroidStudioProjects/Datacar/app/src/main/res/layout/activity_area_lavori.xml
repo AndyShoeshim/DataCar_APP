@@ -1,6 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <Button
+        android:id="@+id/button_add_lavoro"
+        android:onClick="goToAddLavoroActivity"
+        android:text="@string/aggiungi_lavoro"
+        android:textStyle="bold"
+        android:textColor="@color/textinAccent"
+        android:background="@color/colorAccent"
+        android:layout_margin="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/area_lavori_title_rv"
+        android:text="@string/lista_lavori"
+        android:textStyle="bold"
+        android:textAlignment="textStart"
+        android:layout_margin="20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/button_add_lavoro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:layout_below="@id/area_lavori_title_rv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/area_lavori_recycle_view_lista_lavori"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        >
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    </LinearLayout>
+
+</RelativeLayout>
