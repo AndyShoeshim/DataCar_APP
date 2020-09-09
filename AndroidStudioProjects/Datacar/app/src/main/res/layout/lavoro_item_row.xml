@@ -96,11 +96,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
-    <!--<Button
-        android:id="@+id/rv_item_lavoro_effettuato"
-        android:layout_gravity="right"
+    <Button
+        android:id="@+id/rv_item_button_lavoro"
+        android:layout_margin="5dp"
+        android:padding="5dp"
+        android:background="@color/design_default_color_background"
+        android:text="@string/completa_lavoro"
+        android:textStyle="bold"
+        android:layout_below="@id/rv_item_lavoro_data_scadenza"
+        android:layout_alignParentEnd="true"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />-->
+        android:layout_height="wrap_content" />
 
     </RelativeLayout>
 

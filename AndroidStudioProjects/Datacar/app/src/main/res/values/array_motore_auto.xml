@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="motore_auto">
+        <item>Eco</item>
+        <item>JTD</item>
+        <item>Turbo</item>
+        <item>Multijet</item>
+        <item>HDI</item>
+    </string-array>
+</resources>

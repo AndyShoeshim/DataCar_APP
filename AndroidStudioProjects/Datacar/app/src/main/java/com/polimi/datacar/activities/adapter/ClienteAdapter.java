@@ -13,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.polimi.datacar.R;
+import com.polimi.datacar.activities.AddAutoClienteActivity;
 import com.polimi.datacar.activities.ModifyClienteActivity;
 import com.polimi.datacar.controller.ClientController;
 import com.polimi.datacar.model.Cliente;
@@ -53,46 +54,6 @@ public class ClienteAdapter extends RecyclerView.Adapter<ClienteAdapter.ClienteV
         cvh.cognome_cliente.setText(listOfCliente.get(position).getCognome());
         cvh.num_targhe.setText(String.valueOf(listOfCliente.get(position).getTarghe_associate()));
 
-        cvh.deleteButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Log.d(ClienteAdapter.class.getSimpleName(),"" + token);
-                String cod_fiscale = listOfCliente.get(position).getCod_fiscale();
-                clientController.deleteClient(token,cod_fiscale).enqueue(new Callback<Void>() {
-                    @Override
-                    public void onResponse(Call<Void> call, Response<Void> response) {
-                        if(response.isSuccessful()){
-                            listOfCliente.remove(position);
-                            notifyItemRemoved(position);
-                        } else {
-                            Log.e(ClienteAdapter.class.getSimpleName(), "error in deleting");
-                        }
-                    }
-
-                    @Override
-                    public void onFailure(Call<Void> call, Throwable t) {
-                    }
-                });
-            }
-        });
-
-        cvh.modifyButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Cliente cliente = listOfCliente.get(position);
-                Intent goToModifyActivity = new Intent(context, ModifyClienteActivity.class);
-                goToModifyActivity.putExtra("id_cliente",cliente.getId());
-                goToModifyActivity.putExtra("nome", cliente.getNome());
-                goToModifyActivity.putExtra("cognome", cliente.getCognome());
-                goToModifyActivity.putExtra("cap", cliente.getCap());
-                goToModifyActivity.putExtra("cod_fiscale", cliente.getCod_fiscale());
-                goToModifyActivity.putExtra("citta", cliente.getCitta());
-                goToModifyActivity.putExtra("telefono", cliente.getTelefono());
-                goToModifyActivity.putExtra("indirizzo",cliente.getIndirizzo());
-                goToModifyActivity.putExtra("sesso",cliente.getSesso());
-                context.startActivity(goToModifyActivity);
-            }
-        });
     }
 
     @Override
@@ -101,10 +62,19 @@ public class ClienteAdapter extends RecyclerView.Adapter<ClienteAdapter.ClienteV
     }
 
 
+    public int getIdOfClienteByCodFiscale(String cod_fiscale){
+        for(Cliente c : listOfCliente){
+            if(c.getCod_fiscale().equals(cod_fiscale))
+                return c.getId();
+        }
+        return 0;
+    }
+
+
     public class ClienteViewHolder extends RecyclerView.ViewHolder {
 
         TextView nome_cliente, cognome_cliente, num_targhe;
-        ImageButton modifyButton, deleteButton;
+        ImageButton modifyButton, deleteButton, addAutoCliente;
 
         public ClienteViewHolder(@NonNull final View itemView) {
             super(itemView);
@@ -114,8 +84,58 @@ public class ClienteAdapter extends RecyclerView.Adapter<ClienteAdapter.ClienteV
             num_targhe = itemView.findViewById(R.id.rv_item_cliente_num_targhe);
             modifyButton = itemView.findViewById(R.id.rv_item_cliente_modifica);
             deleteButton = itemView.findViewById(R.id.rv_item_cliente_elimina);
+            addAutoCliente = itemView.findViewById(R.id.rv_item_cliente_add_auto);
 
+            modifyButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Cliente cliente = listOfCliente.get(getAdapterPosition());
+                    Intent goToModifyActivity = new Intent(context, ModifyClienteActivity.class);
+                    goToModifyActivity.putExtra("id_cliente",cliente.getId());
+                    goToModifyActivity.putExtra("nome", cliente.getNome());
+                    goToModifyActivity.putExtra("cognome", cliente.getCognome());
+                    goToModifyActivity.putExtra("cap", cliente.getCap());
+                    goToModifyActivity.putExtra("cod_fiscale", cliente.getCod_fiscale());
+                    goToModifyActivity.putExtra("citta", cliente.getCitta());
+                    goToModifyActivity.putExtra("telefono", cliente.getTelefono());
+                    goToModifyActivity.putExtra("indirizzo",cliente.getIndirizzo());
+                    goToModifyActivity.putExtra("sesso",cliente.getSesso());
+                    context.startActivity(goToModifyActivity);
+                }
+            });
 
+            deleteButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Log.d(ClienteAdapter.class.getSimpleName(),"" + token);
+                    String cod_fiscale = listOfCliente.get(getAdapterPosition()).getCod_fiscale();
+                    clientController.deleteClient(token,cod_fiscale).enqueue(new Callback<Void>() {
+                        @Override
+                        public void onResponse(Call<Void> call, Response<Void> response) {
+                            if(response.isSuccessful()){
+                                listOfCliente.remove(getAdapterPosition());
+                                notifyItemRemoved(getAdapterPosition());
+                            } else {
+                                Log.e(ClienteAdapter.class.getSimpleName(), "error in deleting");
+                            }
+                        }
+
+                        @Override
+                        public void onFailure(Call<Void> call, Throwable t) {
+                        }
+                    });
+                }
+            });
+
+            addAutoCliente.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    String cod_fiscale = listOfCliente.get(getAdapterPosition()).getCod_fiscale();
+                    Intent goToAddAuto = new Intent(context, AddAutoClienteActivity.class);
+                    goToAddAuto.putExtra("cod_fiscale_cliente",cod_fiscale);
+                    context.startActivity(goToAddAuto);
+                }
+            });
         }
 
 

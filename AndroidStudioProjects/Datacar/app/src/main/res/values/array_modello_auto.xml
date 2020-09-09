@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="modello_auto">
+        <item>A1</item>
+        <item>A2</item>
+        <item>A3</item>
+        <item>X1</item>
+        <item>X3</item>
+        <item>A180</item>
+        <item>C200</item>
+        <item>Fiesta</item>
+        <item>500X</item>
+        <item>500L</item>
+        <item>500 </item>
+        <item>Punto</item>
+        <item>Panda</item>
+        <item>C1</item>
+        <item>C3</item>
+        <item>C4</item>
+        <item>Giul</item>
+        <item>Giulietta</item>
+        <item>Stelvio</item>
+        <item>Golf</item>
+        <item>Passat</item>
+        <item>Tuareg</item>
+        <item>Polo</item>
+        <item>ix35</item>
+        <item>Tucson</item>
+        <item>ix25</item>
+        <item>Astra</item>
+        <item>Corsa</item>
+        <item>Mokka</item>
+        <item>3008</item>
+        <item>207</item>
+        <item>5008</item>
+        <item>208</item>
+        <item>Clio</item>
+        <item>Megane</item>
+        <item>Y</item>
+    </string-array>
+</resources>
+

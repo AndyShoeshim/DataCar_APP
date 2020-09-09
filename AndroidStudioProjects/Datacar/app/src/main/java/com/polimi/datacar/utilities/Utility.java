@@ -8,7 +8,7 @@ import androidx.appcompat.app.AlertDialog;
 import com.polimi.datacar.R;
 
 
-public class UtilityUI {
+public class Utility {
 
     public static AlertDialog createWaitingAlertDialog(Context context, int viewId){
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
@@ -17,8 +17,11 @@ public class UtilityUI {
         return builder.create();
     }
 
-    public static void createActionOnItemDialog(Context context, int id){
-
+    public static boolean targaInputControl(String targa){
+        if(targa.length()==7)
+            return true;
+        else
+            return false;
     }
 
     public static void retrofitOnFailure(Context context){

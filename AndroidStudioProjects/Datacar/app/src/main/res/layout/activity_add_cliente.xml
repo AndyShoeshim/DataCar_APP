@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent">
+
 <RelativeLayout
     android:layout_margin="10dp"
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
 
     <TextView
@@ -15,6 +19,7 @@
 
     <EditText
         android:id="@+id/nome_cliente"
+        android:singleLine="true"
         android:layout_margin="10dp"
         android:hint="@string/inserisci_nome"
         android:layout_width="match_parent"
@@ -25,6 +30,7 @@
     <EditText
         android:id="@+id/cognome_cliente"
         android:layout_margin="10dp"
+        android:singleLine="true"
         android:hint="@string/inserisci_cognome"
         android:layout_below="@id/nome_cliente"
         android:layout_width="match_parent"
@@ -34,6 +40,7 @@
     <EditText
         android:id="@+id/citta_cliente"
         android:layout_margin="10dp"
+        android:singleLine="true"
         android:hint="@string/inserisci_citta"
         android:layout_below="@id/cognome_cliente"
         android:layout_width="match_parent"
@@ -42,6 +49,7 @@
 
     <EditText
         android:id="@+id/cap_cliente"
+        android:singleLine="true"
         android:layout_margin="10dp"
         android:hint="@string/inserisci_cap"
         android:layout_below="@id/citta_cliente"
@@ -50,6 +58,7 @@
 
     <TextView
         android:id="@+id/inserisci_sesso"
+        android:singleLine="true"
         android:layout_margin="10dp"
         android:hint="@string/inserisci_sesso"
         android:layout_below="@id/cap_cliente"
@@ -66,6 +75,7 @@
     <EditText
         android:id="@+id/cod_fiscale_cliente"
         android:layout_margin="10dp"
+        android:singleLine="true"
         android:hint="@string/inserisci_codice_fiscale"
         android:layout_below="@id/spinner"
         android:layout_width="match_parent"
@@ -74,6 +84,7 @@
     <EditText
         android:id="@+id/telefono_cliente"
         android:layout_margin="10dp"
+        android:singleLine="true"
         android:hint="@string/inserisci_telefono"
         android:layout_below="@id/cod_fiscale_cliente"
         android:inputType="number"
@@ -83,6 +94,7 @@
     <EditText
         android:id="@+id/indirizzo_cliente"
         android:layout_margin="10dp"
+        android:singleLine="true"
         android:hint="@string/inserisci_indirizzo"
         android:layout_below="@id/telefono_cliente"
         android:layout_width="match_parent"
@@ -100,3 +112,5 @@
         android:layout_height="wrap_content" />
 
 </RelativeLayout>
+
+</ScrollView>

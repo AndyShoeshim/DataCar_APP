@@ -9,7 +9,7 @@ android {
 
     defaultConfig {
         applicationId "com.polimi.datacar"
-        minSdkVersion 24
+        minSdkVersion 26
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
@@ -39,6 +39,10 @@ android {
         }
 
     }
+    compileOptions {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+    }
 
 }
 
@@ -62,4 +66,6 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-viewmodel:2.0.0'
     implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0'
     annotationProcessor 'androidx.lifecycle:lifecycle-compiler:2.0.0'
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
+
 }

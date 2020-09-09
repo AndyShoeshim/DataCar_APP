@@ -19,12 +19,11 @@ import com.polimi.datacar.R;
 import com.polimi.datacar.callbacks.LavoroCallback;
 import com.polimi.datacar.controller.LavoroController;
 import com.polimi.datacar.model.Lavoro;
-import com.polimi.datacar.utilities.UtilityUI;
+import com.polimi.datacar.utilities.Utility;
 
 import java.sql.Date;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.List;
 import java.util.Locale;
 
 import retrofit2.Call;
@@ -60,7 +59,7 @@ public class AddLavoroActivity extends AppCompatActivity implements LavoroCallba
         tipo_lavoro_spinner = findViewById(R.id.spinner_tipo_lavoro);
         desc_lavoro_spinner = findViewById(R.id.spinner_lavoro_descrizione);
         create_lavoro_button = findViewById(R.id.button_create_lavoro);
-        dialog = UtilityUI.createWaitingAlertDialog(this,R.layout.layout_loading_items);
+        dialog = Utility.createWaitingAlertDialog(this,R.layout.layout_loading_items);
         final Calendar calendar = Calendar.getInstance();
 
         final DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
@@ -138,4 +137,5 @@ public class AddLavoroActivity extends AppCompatActivity implements LavoroCallba
             Toast.makeText(this,R.string.lavoro_failure,Toast.LENGTH_SHORT).show();
         }
     }
+
 }

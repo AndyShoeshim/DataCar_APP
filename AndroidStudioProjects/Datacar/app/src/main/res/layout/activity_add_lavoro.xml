@@ -15,6 +15,7 @@
         android:id="@+id/lavoro_targa"
         android:textStyle="bold"
         android:inputType="text"
+        android:singleLine="true"
         android:hint="@string/inserimento_targa"
         android:layout_margin="20dp"
         android:layout_below="@+id/title_inserimento_lavoro"

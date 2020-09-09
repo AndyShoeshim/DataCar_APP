@@ -77,6 +77,7 @@ public class AddClienteActivity extends AppCompatActivity  {
                     if(response.isSuccessful()) {
                         startActivity(new Intent(getBaseContext(), AddAutoClienteActivity.class)
                                 .putExtra("cod_fiscale_cliente", cod_fiscale.getText().toString()));
+                        finish();
                     }
                     else
                         Toast.makeText(getBaseContext(),R.string.error_generic,Toast.LENGTH_SHORT).show();

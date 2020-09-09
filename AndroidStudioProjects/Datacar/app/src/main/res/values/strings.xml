@@ -7,7 +7,7 @@
     <string name="login_error">Credenziali non esistenti!</string>
     <string name="server_error">Errore nella comunicazione con il server!</string>
     <string name="login">LOGIN</string>
-    <string name="register">REGISTRA OFFICINA</string>
+    <string name="register">REGISTRAZIONE</string>
     <string name="logout">LOGOUT</string>
     <string name="rag_sociale">Inserisci rag.sociale…</string>
     <string name="p_iva">Inserisci p.iva…</string>
@@ -22,8 +22,9 @@
     <string name="desc_lavoro">DESCRIZIONE LAVORO:</string>
     <string name="data_scadenza">DATA SCADENZA:</string>
     <string name="effettuato">COMPLETATO</string>
+    <string name="completa_lavoro">CONCLUDI LAVORO</string>
     <string name="search_cliente">Ricerca cliente…</string>
-    <string name="search_cliente_hint">Ricerca cliente usando il suo codice fiscale…</string>
+    <string name="search_cliente_hint">Ricerca cliente con CF…</string>
     <string name="register_cliente">Registra cliente</string>
     <string name="modify_cliente">Aggiorna cliente</string>
     <string name="lista_clienti">Lista Clienti</string>
@@ -61,5 +62,10 @@
     <string name="salva_lavoro">SALVA LAVORO</string>
     <string name="lavoro_success">Lavoro inserito con successo!</string>
     <string name="lavoro_failure">Problemi nell\'inserimento del lavoro!</string>
+    <string name="lavoro_ricerca_targa">Ricerca i lavori relativi ad una targa</string>
+    <string name="no_lavori_odierni">Nessun lavoro in scadenza in data odierna!</string>
+    <string name="error_search_client">Nessun cliente registrato con quel codice fiscale!</string>
+    <string name="detail_client">Ecco le informazioni del cliente trovato!</string>
+    <string name="targa_control_error">La targa di un auto deve essere di 7 caratteri!</string>
 
 </resources>

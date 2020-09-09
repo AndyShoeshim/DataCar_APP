@@ -9,6 +9,7 @@ import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.Headers;
 import retrofit2.http.POST;
+import retrofit2.http.PUT;
 import retrofit2.http.Path;
 
 public interface LavoroService {
@@ -24,4 +25,7 @@ public interface LavoroService {
             "Content-Type: application/json"
     })
     Call<Void> addLavoro(@Path("id_officina") int id_officina, @Body Lavoro lavoro);
+
+    @PUT("lavoro/{id_lavoro}")
+    Call<Void> updateLavoroStatus(@Path("id_lavoro") int id_lavoro);
 }

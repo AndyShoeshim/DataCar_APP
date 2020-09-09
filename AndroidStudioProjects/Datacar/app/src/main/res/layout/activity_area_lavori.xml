@@ -3,16 +3,35 @@
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
+    <LinearLayout
+        android:id="@+id/ll_area_lavoro_actions"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
     <Button
         android:id="@+id/button_add_lavoro"
         android:onClick="goToAddLavoroActivity"
         android:text="@string/aggiungi_lavoro"
         android:textStyle="bold"
         android:textColor="@color/textinAccent"
-        android:background="@color/colorAccent"
+        android:background="@color/colorPrimary"
         android:layout_margin="20dp"
+        android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/et_ricerca_targa_rv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:maxLines="1"
+        android:hint="@string/lavoro_ricerca_targa"
+        />
+
+    </LinearLayout>
 
     <TextView
         android:id="@+id/area_lavori_title_rv"
@@ -21,24 +40,22 @@
         android:textAlignment="textStart"
         android:layout_margin="20dp"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/button_add_lavoro"
+        android:layout_below="@+id/ll_area_lavoro_actions"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
-    <LinearLayout
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/scroll_view_area_lavoro"
         android:layout_below="@id/area_lavori_title_rv"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/area_lavori_recycle_view_lista_lavori"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="10dp"
-        >
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/area_lavori_recycle_view_lista_lavori"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp" />
 
-    </androidx.recyclerview.widget.RecyclerView>
-
-    </LinearLayout>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
 </RelativeLayout>

@@ -28,6 +28,7 @@
         <activity android:name=".activities.ModifyClienteActivity" />
         <activity android:name=".activities.AddAutoClienteActivity" />
         <activity android:name=".activities.AddLavoroActivity" />
+        <activity android:name=".activities.ClientDetailActivity" />
 
 
     </application>

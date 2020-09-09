@@ -17,7 +17,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.polimi.datacar.R;
 import com.polimi.datacar.callbacks.OfficinaLoginCallback;
 import com.polimi.datacar.controller.OfficinaController;
-import com.polimi.datacar.utilities.UtilityUI;
+import com.polimi.datacar.utilities.Utility;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -39,7 +39,7 @@ public class LoginActivity extends AppCompatActivity implements OfficinaLoginCal
         email_text = findViewById(R.id.login_activity_email);
         password_text = findViewById(R.id.login_activity_password);
         button = findViewById(R.id.login_activity_button_login);
-        dialog = UtilityUI.createWaitingAlertDialog(this,R.layout.layout_loading_items);
+        dialog = Utility.createWaitingAlertDialog(this,R.layout.layout_loading_items);
     }
 
 
@@ -61,7 +61,7 @@ public class LoginActivity extends AppCompatActivity implements OfficinaLoginCal
             @Override
             public void onFailure(Call<Integer> call, Throwable t) {
                 dialog.cancel();
-                UtilityUI.retrofitOnFailure(context);
+                Utility.retrofitOnFailure(context);
             }
         });
     }

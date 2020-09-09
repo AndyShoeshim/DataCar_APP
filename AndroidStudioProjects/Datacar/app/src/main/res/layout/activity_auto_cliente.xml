@@ -18,90 +18,141 @@
         android:hint="@string/inserimento_targa"
         android:autofillHints="@string/inserimento_targa"
         android:inputType="text"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/title_inserimento_auto"
         />
 
-    <EditText
-        android:id="@+id/marca_auto"
+    <TextView
+        android:id="@+id/marca_auto_title"
         android:layout_margin="10dp"
         android:hint="@string/inserimento_marca"
         android:autofillHints="@string/inserimento_targa"
-        android:inputType="text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/title_inserimento_auto"
-        android:layout_toEndOf="@+id/targa_auto"
+        android:layout_below="@id/targa_auto"
         />
 
-    <EditText
-        android:id="@+id/modello_auto"
+    <Spinner
+        android:id="@+id/spinner_marca"
+        android:entries="@array/marca_auto"
+        android:layout_toEndOf="@id/targa_auto"
+        android:layout_below="@id/marca_auto_title"
+        android:layout_alignStart="@+id/marca_auto_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/modello_auto_title"
         android:layout_margin="10dp"
         android:hint="@string/inserimento_modello"
         android:autofillHints="@string/inserimento_targa"
-        android:inputType="text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/targa_auto"
+        android:layout_below="@id/targa_auto"
+        android:layout_alignParentEnd="true"
         />
 
-    <EditText
-        android:id="@+id/motore_auto"
+    <Spinner
+        android:id="@+id/spinner_modello"
+        android:entries="@array/modello_auto"
+        android:layout_toEndOf="@id/targa_auto"
+        android:layout_below="@id/modello_auto_title"
+        android:layout_alignStart="@id/modello_auto_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/motore_auto_title"
         android:layout_margin="10dp"
-        android:hint="@string/inserimento_motore"
+        android:text="@string/inserimento_motore"
         android:autofillHints="@string/inserimento_targa"
-        android:inputType="text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toEndOf="@id/modello_auto"
-        android:layout_below="@+id/marca_auto"
+        android:layout_below="@id/spinner_marca"
         />
 
-    <EditText
-        android:id="@+id/cilindrata_auto"
+    <Spinner
+        android:id="@+id/spinner_motore"
+        android:entries="@array/motore_auto"
+        android:layout_toEndOf="@id/targa_auto"
+        android:layout_below="@id/motore_auto_title"
+        android:layout_alignStart="@+id/marca_auto_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/cilindrata_auto_title"
         android:layout_margin="10dp"
-        android:hint="@string/inserimento_cilindrata"
+        android:text="@string/inserimento_cilindrata"
         android:autofillHints="@string/inserimento_targa"
-        android:inputType="text|number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/modello_auto"
+        android:layout_below="@id/spinner_modello"
+        android:layout_alignParentEnd="true"
         />
 
-    <EditText
-        android:id="@+id/carburante_auto"
+    <Spinner
+        android:id="@+id/spinner_cilindrata"
+        android:entries="@array/cilindrata_auto"
+        android:layout_toEndOf="@id/targa_auto"
+        android:layout_below="@id/cilindrata_auto_title"
+        android:layout_alignStart="@id/modello_auto_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/carburante_auto_title"
         android:layout_margin="10dp"
         android:hint="@string/inserimento_carburante"
         android:autofillHints="@string/inserimento_targa"
-        android:inputType="text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toEndOf="@id/modello_auto"
-        android:layout_below="@+id/motore_auto"
+        android:layout_below="@id/spinner_motore"
         />
 
+    <Spinner
+        android:id="@+id/spinner_carburante"
+        android:entries="@array/carburante_auto"
+        android:layout_below="@id/carburante_auto_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
-    <EditText
-        android:id="@+id/cavalli_auto"
+    <TextView
+        android:id="@+id/cavalli_auto_title"
         android:layout_margin="10dp"
         android:hint="@string/inserimento_cavalli"
         android:autofillHints="@string/inserimento_targa"
-        android:inputType="number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/carburante_auto"
+        android:layout_below="@id/spinner_cilindrata"
+        android:layout_alignParentEnd="true"
         />
+
+    <Spinner
+        android:id="@+id/spinner_cavalli"
+        android:entries="@array/cavalli_auto"
+        android:layout_toEndOf="@id/targa_auto"
+        android:layout_below="@id/cavalli_auto_title"
+        android:layout_alignStart="@id/cavalli_auto_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
 
     <Button
         android:id="@+id/button_auto_cliente"
         android:onClick="registerAutoCliente"
         android:layout_margin="10dp"
+        android:background="@color/colorPrimary"
+        android:textColor="@color/textinAccent"
+        android:textStyle="bold"
         android:text="@string/registra_auto"
+        android:layout_below="@id/spinner_carburante"
         android:layout_centerHorizontal="true"
-        android:layout_below="@id/cavalli_auto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+
+
 
 
 </RelativeLayout>

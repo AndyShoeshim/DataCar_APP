@@ -16,7 +16,7 @@ import com.polimi.datacar.R;
 import com.polimi.datacar.callbacks.UpdateOnResult;
 import com.polimi.datacar.controller.ClientController;
 import com.polimi.datacar.model.Cliente;
-import com.polimi.datacar.utilities.UtilityUI;
+import com.polimi.datacar.utilities.Utility;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -73,14 +73,14 @@ public class ModifyClienteActivity extends AppCompatActivity implements UpdateOn
         telefono = findViewById(R.id.telefono_cliente);
         indirizzo = findViewById(R.id.indirizzo_cliente);
         button = findViewById(R.id.button_modify_cliente);
-        dialog = UtilityUI.createWaitingAlertDialog(this,R.layout.layout_loading_items);
+        dialog = Utility.createWaitingAlertDialog(this,R.layout.layout_loading_items);
 
         nome.setText(String.valueOf(callingIntent.getStringExtra("nome")));
         cognome.setText(String.valueOf(callingIntent.getStringExtra("cognome")));
         citta.setText(String.valueOf(callingIntent.getStringExtra("citta")));
         cap.setText(String.valueOf(callingIntent.getStringExtra("cap")));
         cod_fiscale.setText(String.valueOf(callingIntent.getStringExtra("cod_fiscale")));
-        telefono.setText(String.valueOf(callingIntent.getIntExtra("telefono",0)));
+        telefono.setText(String.valueOf(callingIntent.getLongExtra("telefono",0)));
         indirizzo.setText(String.valueOf(callingIntent.getStringExtra("indirizzo")));
     }
 
@@ -94,7 +94,7 @@ public class ModifyClienteActivity extends AppCompatActivity implements UpdateOn
         cliente.setCap(cap.getText().toString());
         cliente.setCod_fiscale(cod_fiscale.getText().toString());
         cliente.setSesso(callingIntent.getStringExtra("sesso"));
-        cliente.setTelefono(Integer.parseInt(telefono.getText().toString()));
+        cliente.setTelefono(Long.parseLong(telefono.getText().toString()));
         cliente.setIndirizzo(indirizzo.getText().toString());
 
         return cliente;

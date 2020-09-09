@@ -37,4 +37,9 @@ public class LavoroController implements LavoroService {
     public Call<Void> addLavoro(int id_officina, Lavoro lavoro) {
         return retrofit.create(LavoroService.class).addLavoro(id_officina,lavoro);
     }
+
+    @Override
+    public Call<Void> updateLavoroStatus(int id_lavoro) {
+        return retrofit.create(LavoroService.class).updateLavoroStatus(id_lavoro);
+    }
 }

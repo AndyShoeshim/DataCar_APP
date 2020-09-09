@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -19,7 +18,7 @@ import com.polimi.datacar.callbacks.OfficinaRegisterCallback;
 import com.polimi.datacar.controller.OfficinaController;
 import com.polimi.datacar.model.Officina;
 import com.polimi.datacar.utilities.EditTextCheck;
-import com.polimi.datacar.utilities.UtilityUI;
+import com.polimi.datacar.utilities.Utility;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -54,7 +53,7 @@ public class RegisterActivity extends AppCompatActivity implements OfficinaRegis
         num_telefono = findViewById(R.id.register_activity__num_telefono);
         indirizzo = findViewById(R.id.register_activity__indirizzo);
         button = findViewById(R.id.register_activity_register);
-        dialog = UtilityUI.createWaitingAlertDialog(this,R.layout.layout_loading_items);
+        dialog = Utility.createWaitingAlertDialog(this,R.layout.layout_loading_items);
 
     }
 
@@ -120,7 +119,7 @@ public class RegisterActivity extends AppCompatActivity implements OfficinaRegis
 
     public void errorWithServer(){
         dialog.cancel();
-        UtilityUI.retrofitOnFailure(this);
+        Utility.retrofitOnFailure(this);
     }
 
     @Override
